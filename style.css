@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+    font-family: "DM Sans", sans-serif;
+    color: #20233a;
+    background: #f1f3ff;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --accent: #6658e8;
+    --accent-dark: #5143d0;
+    --muted: #8589a2;
+    --line: #e7e8f1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    padding: 24px;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(ellipse at 15% 15%, rgb(183 194 255 / 45%), transparent 34%),
+        radial-gradient(ellipse at 85% 85%, rgb(229 194 255 / 42%), transparent 32%),
+        #f5f6ff;
+}
+
+body > div {
+    width: min(100%, 440px);
+    height: auto !important;
+    padding: 40px;
+    gap: 22px !important;
+    align-items: stretch !important;
+    border: 1px solid rgb(255 255 255 / 85%);
+    border-radius: 28px;
+    background: rgb(255 255 255 / 88%);
+    box-shadow: 0 24px 70px rgb(52 54 105 / 13%), 0 3px 12px rgb(52 54 105 / 5%);
+    backdrop-filter: blur(16px);
+}
+
+h1 {
+    margin: 0 0 4px;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2rem, 8vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.06em;
+    text-align: center;
+}
+
+body > div > div:nth-of-type(1),
+body > div > div:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    color: #555971;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    min-height: 54px;
+    padding: 0 16px;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    outline: none;
+    background: #fafaff;
+    color: #20233a;
+    font: inherit;
+    font-size: 1rem;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+input::placeholder {
+    color: #a7a9ba;
+}
+
+input:focus {
+    border-color: var(--accent);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgb(102 88 232 / 12%);
+}
+
+body > div > div:nth-of-type(3) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 2px;
+}
+
+body > div > div:nth-of-type(3) button {
+    min-height: 52px;
+    border: 1px solid #e8e6ff;
+    border-radius: 14px;
+    background: #f3f1ff;
+    color: var(--accent-dark);
+    font: 600 1.35rem "Space Grotesk", sans-serif;
+    cursor: pointer;
+    transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+body > div > div:nth-of-type(3) button:hover {
+    transform: translateY(-2px);
+    background: #eae7ff;
+    box-shadow: 0 5px 12px rgb(102 88 232 / 12%);
+}
+
+button:focus-visible {
+    outline: 3px solid rgb(102 88 232 / 35%);
+    outline-offset: 3px;
+}
+
+body > div > div:nth-of-type(4) {
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+}
+
+#Calculate {
+    width: 100%;
+    min-height: 54px;
+    border: 0;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #7668f2, #5b4bdc);
+    box-shadow: 0 8px 18px rgb(102 88 232 / 24%);
+    color: #fff;
+    font: 600 1rem "DM Sans", sans-serif;
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease, filter 160ms ease;
+}
+
+#Calculate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 11px 22px rgb(102 88 232 / 30%);
+    filter: brightness(1.04);
+}
+
+#Calculate:active {
+    transform: translateY(0);
+}
+
+p {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin: 18px 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+#Output {
+    color: #282344;
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+    text-align: right;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+
+    body > div {
+        padding: 30px 24px;
+        border-radius: 24px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
